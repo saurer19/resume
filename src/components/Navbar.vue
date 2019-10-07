@@ -1,15 +1,14 @@
 <template>
-  <header class="  sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-3">
+  <header class="sm:flex text-gray-300 sm:justify-between sm:items-center sm:px-4 sm:py-3">
     <div class="flex items-center justify-between px-4 py-3">
-      <div class="text-white text-2xl">
-        Gabriel
-        <span class="text-blue-200">Rivas</span>
-      </div>
+      <router-link to="/" class="text-2xl cursor-pointer">
+        Gabriel<span class="text-blue-200 font-semibold">Rivas</span>
+      </router-link>
       <div class="sm:hidden">
         <button
           @click="isOpen = !isOpen"
           type="button"
-          class="block text-gray-500 hover:text-white focus:text-white focus:outline-none"
+          class="block text-gray-500 hover: focus: focus:outline-none"
         >
           <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
             <path
@@ -26,11 +25,23 @@
         </button>
       </div>
     </div>
-    <nav :class="isOpen ? 'block' : 'hidden'" class="sm:block">
-      <div class="px-2 pt-2 pb-4 sm:flex sm:p-0">
-        <router-link to="/" class="block px-2 py-1 text-white font-semibold rounded hover:bg-gray-800">Home</router-link>
-        <router-link to="/skills" class="mt-1 block px-2 py-1 text-white font-semibold rounded hover:bg-gray-800 sm:mt-0 sm:ml-2">Skills</router-link>
-        <router-link to="/experience" class="mt-1 block px-2 py-1 text-white font-semibold rounded hover:bg-gray-800 sm:mt-0 sm:ml-2">Experience</router-link>
+    <nav :class="{'close max-h-0 ': !isOpen}" class="sm:block sm:max-h-full navLinks">
+      <div class="px-4 pt-2 pb-4 sm:flex sm:p-0">
+        <router-link
+          to="/skills"
+          @click.native="isOpen=false"
+          class="cursor-pointer mt-1 block px-2 py-1 font-semibold rounded hover:bg-gray-800 sm:mt-0 sm:ml-2"
+        >Skills</router-link>
+        <router-link
+          to="/experience"
+          @click.native="isOpen=false"
+          class="cursor-pointer mt-1 block px-2 py-1 font-semibold rounded hover:bg-gray-800 sm:mt-0 sm:ml-2"
+        >Experience</router-link>
+        <router-link
+          to="/contact"
+          @click.native="isOpen=false"
+          class="cursor-pointer mt-1 block px-2 py-1 font-semibold rounded hover:bg-gray-800 sm:mt-0 sm:ml-2"
+        >Contact</router-link>
       </div>
     </nav>
   </header>
@@ -44,3 +55,13 @@ export default {
   }
 };
 </script>
+<style>
+.navLinks.close {
+  overflow: hidden;
+  transition: max-height 0.15s ease-out;
+}
+.navLinks {
+  max-height: 400px;
+  transition: max-height 0.25s ease-in;
+}
+</style>
