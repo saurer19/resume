@@ -21,15 +21,15 @@
       class="inline-flex items-center mt-8 px-8 py-2 bg-gray-800 hover:bg-gray-600 rounded-full max-w-xs cursor-pointer text-xs uppercase tracking-wide"
     >
       <svg
-        class="fill-current"
         xmlns="http://www.w3.org/2000/svg"
+        class="fill-current"
         viewBox="0 0 24 24"
-        width="20"
-        height="20"
+        width="24"
+        height="24"
       >
         <path
           class="heroicon-ui"
-          d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6c0-1.1.9-2 2-2zm16 3.38V6H4v1.38l8 4 8-4zm0 2.24l-7.55 3.77a1 1 0 0 1-.9 0L4 9.62V18h16V9.62z"
+          d="M8 7V5c0-1.1.9-2 2-2h4a2 2 0 0 1 2 2v2h4a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9c0-1.1.9-2 2-2h4zm8 2H8v10h8V9zm2 0v10h2V9h-2zM6 9H4v10h2V9zm4-2h4V5h-4v2z"
         />
       </svg>
 
@@ -46,5 +46,4 @@ export default {
 };
 </script>
 <style>
-
 </style>
