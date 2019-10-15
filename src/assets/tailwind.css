@@ -2,7 +2,14 @@
 @tailwind components;
 
 .hyphens-text {
-    hyphens: auto;
+  hyphens: auto;
+}
+@responsive {
+  .padding-image-lg {
+    padding-top: 60%;
   }
-  
+  .padding-image-sm {
+    padding-top: 50%;
+  }
+}
 @tailwind utilities;

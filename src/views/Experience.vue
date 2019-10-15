@@ -9,7 +9,7 @@
         v-bind:key="job.title"
       >
         <div class="md:w-1/2 md:pt-16 md:pr-0 md:pl-12">
-          <a class="block relative padding-image"  :href="job.link">
+          <a class="block relative padding-image-sm md:padding-image-lg"  :href="job.link">
             <img
               class="inset-0 absolute block rounded-t md:rounded-b md:shadow-lg"
               :src="job.img.src"
@@ -19,7 +19,7 @@
         </div>
         <div class="px-6 pb-6 md:w-1/2 md:px-12 md:py-8 md:flex md:items-center">
           <div>
-            <div class="antialiased text-xl md:text-2xl font-medium text-gray-100">{{job.title}}</div>
+            <div class="antialiased text-2xl md:text-2xl font-medium text-gray-100">{{job.title}}</div>
             <div
               class="text-gray-100 mt-2 md:mt-3 antialiased font-medium text-sm md:text-md leading-tight md:leading-normal opacity-75"
             >{{job.description}}</div>
@@ -76,8 +76,3 @@ export default {
   }
 };
 </script>
-<style>
-.padding-image{
-  padding-top: 60%;
-}
-</style>
