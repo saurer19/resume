@@ -1,36 +1,29 @@
 <template>
-  <div class="flex-1 h-full pt-8 px-6 justify-center bg-gray-200 text-gray-800">
-    <div class="text-3xl font-light">Skills</div>
-    <div class="flex flex-col pt-6 justify-center content-center">
-      <transition-group
-        name="staggered-fade"
-        tag="div"
-        v-bind:css="false"
-        v-on:before-enter="beforeEnter"
-        v-on:enter="enter"
-        v-on:leave="leave"
+  <div class="flex-1 h-full py-8 px-6 justify-center bg-gray-200 text-gray-800">
+    <div class="max-w-6xl mx-auto py-8">
+      <div class="lg:mx-12 text-5xl text-blue-700 font-normal">Skills</div>
+    <div class="flex flex-wrap pt-6 justify-center content-center">
+      <div
+        class="w-full md:flex mx-auto my-4 lg:mx-12 shadow-lg lg:max-w-full"
+        v-for="skill in skills"
+        v-bind:key="skill.title"
       >
         <div
-          class="w-10/12 w-full md:flex mx-auto my-4 shadow-lg"
-          v-for="skill in skills"
-          v-bind:key="skill.title"
+          class="h-64 md:h-auto md:w-1/2 flex-none rounded-t md:rounded-t-none md:rounded-l text-center overflow-hidden bg-blue-900"
         >
-          <div
-            class="h-64 md:h-auto md:w-1/2 flex-none rounded-t md:rounded-t-none md:rounded-l text-center overflow-hidden bg-blue-900"
-          >
-            <div class="flex py-3">
-              <img class="h-16 w-full" src="@/assets/react-logo.svg" alt="react.js logo" />
-              <img class="h-16 w-full" src="@/assets/react-logo.svg" alt="react.js logo" />
-            </div>
-          </div>
-          <div
-            class="w-full md:w-1/2 border-r border-b border-l border-gray-300 md:border-l-0 md:border-t bg-white rounded-b md:rounded-b-none md:rounded-r p-4 flext flex-col justify-between leading-normal"
-          >
-            <div class="font-bold text-xl mb-2 p-2">{{skill.title}}</div>
-            <div class="text-gray-700 text-base p-2">{{skill.description}}</div>
+          <div class="flex py-3">
+            <img class="h-24 w-full" src="/img/react.svg" alt="react.js logo" />
+            <img class="h-16 w-full" src="/img/react.svg" alt="react.js logo" />
           </div>
         </div>
-      </transition-group>
+        <div
+          class="w-full md:w-1/2 border-r border-b border-l border-gray-300 md:border-l-0 md:border-t bg-white rounded-b md:rounded-b-none md:rounded-r p-4 flext flex-col justify-between leading-normal"
+        >
+          <div class="font-bold text-xl mb-2 p-2 text-gray-800">{{skill.title}}</div>
+          <div class="text-gray-700 text-base p-2 text-gray-700">{{skill.description}}</div>
+        </div>
+      </div>
+    </div>
     </div>
   </div>
 </template>
@@ -47,29 +40,29 @@ export default {
               row1: [
                 {
                   alt: "Vue",
-                  src: "/assets/vue.svg"
+                  src: "/img/vue.svg"
                 },
                 {
                   alt: "React",
-                  src: "/assets/react.svg"
+                  src: "/img/react.svg"
                 },
                 {
                   alt: "Angular",
-                  src: "/assets/angular.svg"
+                  src: "/img/angular.svg"
                 }
               ],
               row2: [
                 {
                   alt: "Express.js",
-                  src: "/assets/express.svg"
+                  src: "/img/express.svg"
                 },
                 {
                   alt: "Node.js",
-                  src: "/assets/node.svg"
+                  src: "/img/node.svg"
                 },
                 {
                   alt: "ES6",
-                  src: "/assets/es6.svg"
+                  src: "/img/es6.svg"
                 }
               ]
             }
@@ -81,11 +74,11 @@ export default {
           imgs: [
             {
               alt: "html",
-              src: "/assets/kivy.svg"
+              src: "/img/kivy.svg"
             },
             {
               alt: "css",
-              src: "/assets/flask.svg"
+              src: "/img/flask.svg"
             }
           ]
         },
@@ -95,15 +88,15 @@ export default {
           imgs: [
             {
               alt: "Kivy",
-              src: "/assets/kivy.svg"
+              src: "/img/kivy.svg"
             },
             {
               alt: "Flask",
-              src: "/assets/flask.svg"
+              src: "/img/flask.svg"
             },
             {
               alt: "SQLALchemy",
-              src: "/assets/sqlalchemy.svg"
+              src: "/img/sqlalchemy.svg"
             }
           ]
         },
@@ -116,7 +109,7 @@ Full understanding of IAM to grant the necessary permission.
           imgs: [
             {
               alt: "AWS",
-              src: "/assets/aws.svg"
+              src: "/img/aws.svg"
             }
           ]
         }
