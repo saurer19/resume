@@ -9,20 +9,29 @@
         v-bind:key="job.title"
       >
         <div class="md:w-1/2 md:pt-16 md:pr-0 md:pl-12">
-          <a class="block relative padding-image-sm md:padding-image-lg"  :href="job.link">
+          <a class="block relative padding-image-sm md:padding-image-lg" :href="job.link">
             <img
-              class="inset-0 absolute block rounded-t md:rounded-b md:shadow-lg"
+              class="inset-0 absolute block rounded-t md:rounded-b md:shadow-lg hover:opacity-75"
               :src="job.img.src"
               :alt="job.img.alt"
             />
           </a>
         </div>
-        <div class="px-6 pb-6 md:w-1/2 md:px-12 md:py-8 md:flex md:items-center">
+        <div class="px-6 pb-6 pt-3 md:w-1/2 md:px-12 md:py-8 md:flex md:items-center">
           <div>
             <div class="antialiased text-2xl md:text-2xl font-medium text-gray-100">{{job.title}}</div>
             <div
               class="text-gray-100 mt-2 md:mt-3 antialiased font-medium text-sm md:text-md leading-tight md:leading-normal opacity-75"
             >{{job.description}}</div>
+            <div class="px-6 py-4">
+              <a
+                :href="tool.link"
+                target="_blank"
+                v-for="tool in job.tools"
+                v-bind:key="tool.name"
+                class="inline-block shadow-md bg-gray-300 hover:bg-gray-500 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2"
+              >{{tool.name}}</a>
+            </div>
           </div>
         </div>
       </div>
@@ -41,7 +50,12 @@ export default {
           img: {
             src: "/img/citywallet.png",
             alt: "Citywallet"
-          }
+          },
+          tools: [
+            { name: "Python", link: "https://www.python.org" },
+            { name: "Kivy", link: "https://kivy.org/" },
+            { name: "Raspberry Pi", link: "https://www.raspberrypi.org" }
+          ]
         },
         {
           title: "TZone",
@@ -50,7 +64,18 @@ export default {
           img: {
             src: "/img/tzone.png",
             alt: "Tzone"
-          }
+          },
+          tools: [
+            {
+              name: "React Native",
+              link: "https://facebook.github.io/react-native/"
+            },
+            {
+              name: "ES6",
+              link:
+                "https://https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_2015_support_in_Mozilla.org/"
+            }
+          ]
         },
         {
           title: "PGA Group",
@@ -59,7 +84,11 @@ export default {
           img: {
             src: "/img/pgagroup.png",
             alt: "PGA"
-          }
+          },
+          tools: [
+            { name: "WordPress", link: "https://wordpress.org" },
+            { name: "PHP", link: "https://www.php.net" }
+          ]
         },
         {
           title: "Firefly Integrations",
@@ -69,7 +98,11 @@ export default {
           img: {
             src: "/img/fireflyint.jpg",
             alt: "Firefly"
-          }
+          },
+          tools: [
+            { name: "Angular +", link: "https://angular.io/" },
+            { name: "Vue.js", link: "https://vuejs.org" }
+          ]
         }
       ]
     };
