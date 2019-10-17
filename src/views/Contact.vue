@@ -1,8 +1,12 @@
 <template>
   <div class="flex-1 h-full pt-8 px-6 justify-center bg-gray-200 text-gray-800">
-    <div class="max-w-lg mx-auto py-8">
-      <div class="text-5xl text-blue-700 font-normal">Contact Me</div>
-      <div class="flex flex-col pt-6">
+    <div class="max-w-lg w-full lg:max-w-6xl mx-auto">
+    <div class="text-5xl text-blue-700 font-normal py-8 px-10">Contact Me</div>
+
+    </div>
+
+    <div class="max-w-lg  lg:max-w-6xl mx-auto py-8 px-10 flex flex-wrap">
+      <div class="flex flex-col lg:w-1/2 pr-8">
         <div
           class="hyphens-text leading-normal pb-4"
         >Have a question? Looking to work together? Want to grab a cup of coffee? Feel free to contact me!</div>
@@ -52,9 +56,9 @@
           </a>
         </div>
       </div>
-      <form>
-        <div class="flex flex-wrap -mx-3 mb-6">
-          <div class="w-full px-3">
+      <form class="lg:w-1/2">
+        <div class="flex flex-wrap -mx-3 mb-4">
+          <div class="w-full md:w-1/2 px-3">
             <label
               class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
               for="grid-password"
@@ -64,6 +68,18 @@
               id="grid-password"
               type="email"
               placeholder="insert your email"
+            />
+          </div>
+          <div class="w-full md:w-1/2 px-3">
+            <label
+              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              for="grid-password"
+            >Name</label>
+            <input
+              class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="grid-password"
+              type="text"
+              placeholder="insert your name"
             />
           </div>
           <div class="w-full px-3">
@@ -76,13 +92,20 @@
             ></textarea>
           </div>
         </div>
+        <div class="w-full flex">
+          <button
+            class="mx-auto bg-gray-300 text-center hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
+          >
+            <span class="pr-3">Sent</span>
+            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+              <path
+                fill="#000000"
+                d="M13 17H17V14L22 18.5L17 23V20H13V17M20 4H4A2 2 0 0 0 2 6V18A2 2 0 0 0 4 20H11.35A5.8 5.8 0 0 1 11 18A6 6 0 0 1 22 14.69V6A2 2 0 0 0 20 4M20 8L12 13L4 8V6L12 11L20 6Z"
+              />
+            </svg>
+          </button>
+        </div>
       </form>
     </div>
   </div>
 </template>
-<script>
-  import VueRecaptcha from 'vue-recaptcha';
-  export default {
-    components: { VueRecaptcha }
-  };
-</script>

@@ -101,7 +101,9 @@ export default {
           },
           tools: [
             { name: "Angular +", link: "https://angular.io/" },
-            { name: "Vue.js", link: "https://vuejs.org" }
+            { name: "Vue.js", link: "https://vuejs.org" },
+            { name: "AWS", link: "https://aws.amazon.com" }
+
           ]
         }
       ]

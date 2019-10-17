@@ -2,28 +2,34 @@
   <div class="flex-1 h-full py-8 px-6 justify-center bg-gray-200 text-gray-800">
     <div class="max-w-6xl mx-auto py-8">
       <div class="lg:mx-12 text-5xl text-blue-700 font-normal">Skills</div>
-    <div class="flex flex-wrap pt-6 justify-center content-center">
-      <div
-        class="w-full md:flex mx-auto my-4 lg:mx-12 shadow-lg lg:max-w-full"
-        v-for="skill in skills"
-        v-bind:key="skill.title"
-      >
+      <div class="flex flex-wrap pt-6 justify-center content-center">
         <div
-          class="h-64 md:h-auto md:w-1/2 flex-none rounded-t md:rounded-t-none md:rounded-l text-center overflow-hidden bg-blue-900"
+          class="w-full md:flex mx-auto my-4 lg:mx-12 shadow-lg lg:max-w-full"
+          v-for="(skill, index) in skills"
+          v-bind:key="skill.title"
+          :class="{'md:flex-row-reverse': index % 2 === 0}"
         >
-          <div class="flex py-3">
-            <img class="h-24 w-full" src="/img/react.svg" alt="react.js logo" />
-            <img class="h-16 w-full" src="/img/react.svg" alt="react.js logo" />
+          <div
+            class="h-64 md:h-auto md:w-1/2 flex-none rounded-t md:rounded-t-none md:rounded-l text-center overflow-hidden bg-gray-500"
+          >
+            <div class="py-16 inline-flex justify-around" :class="{'imgs-row': index % 2 === 0}">
+              <img
+                v-for="skillImg in skill.imgs"
+                v-bind:key="skillImg.alt"
+                class="h-32 "
+                :src="skillImg.src"
+                alt="react.js logo"
+              />
+            </div>
+          </div>
+          <div
+            class="w-full md:w-1/2 border-r border-b border-l border-gray-300 md:border-l-0 md:border-t bg-white rounded-b md:rounded-b-none md:rounded-r p-4 flext flex-col justify-between leading-normal"
+          >
+            <div class="font-bold text-xl mb-2 p-2 text-gray-800">{{skill.title}}</div>
+            <div class="text-gray-700 text-base p-2 text-gray-700">{{skill.description}}</div>
           </div>
         </div>
-        <div
-          class="w-full md:w-1/2 border-r border-b border-l border-gray-300 md:border-l-0 md:border-t bg-white rounded-b md:rounded-b-none md:rounded-r p-4 flext flex-col justify-between leading-normal"
-        >
-          <div class="font-bold text-xl mb-2 p-2 text-gray-800">{{skill.title}}</div>
-          <div class="text-gray-700 text-base p-2 text-gray-700">{{skill.description}}</div>
-        </div>
       </div>
-    </div>
     </div>
   </div>
 </template>
@@ -37,35 +43,21 @@ export default {
           description: `I’m very confident with my JavaScript knowledge, I have experience working with the DOM API, the core concepts behind JS and ES6, I have experience with the most popular Frameworks (React, Vue and Angular +). I also have experience working with modern toolings as such as Webpack, NPM/Yarn and Babel.`,
           imgs: [
             {
-              row1: [
-                {
-                  alt: "Vue",
-                  src: "/img/vue.svg"
-                },
-                {
-                  alt: "React",
-                  src: "/img/react.svg"
-                },
-                {
-                  alt: "Angular",
-                  src: "/img/angular.svg"
-                }
-              ],
-              row2: [
-                {
-                  alt: "Express.js",
-                  src: "/img/express.svg"
-                },
-                {
-                  alt: "Node.js",
-                  src: "/img/node.svg"
-                },
-                {
-                  alt: "ES6",
-                  src: "/img/es6.svg"
-                }
-              ]
-            }
+              alt: "Vue",
+              src: "/img/vue.svg"
+            },
+            {
+              alt: "React",
+              src: "/img/react.svg"
+            },
+            {
+              alt: "Angular",
+              src: "/img/angular.svg"
+            },
+            {
+              alt: "Node.js",
+              src: "/img/node.svg"
+            },
           ]
         },
         {
@@ -74,12 +66,8 @@ export default {
           imgs: [
             {
               alt: "html",
-              src: "/img/kivy.svg"
+              src: "/img/csshtml.svg"
             },
-            {
-              alt: "css",
-              src: "/img/flask.svg"
-            }
           ]
         },
         {
@@ -88,15 +76,15 @@ export default {
           imgs: [
             {
               alt: "Kivy",
-              src: "/img/kivy.svg"
+              src: "/img/kivy.png"
             },
             {
               alt: "Flask",
-              src: "/img/flask.svg"
+              src: "/img/flask.png"
             },
             {
               alt: "SQLALchemy",
-              src: "/img/sqlalchemy.svg"
+              src: "/img/python.svg"
             }
           ]
         },
@@ -118,3 +106,25 @@ Full understanding of IAM to grant the necessary permission.
   }
 };
 </script>
+<style>
+.imgs-row {
+  width: 130%;
+  animation-duration: 25s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-fill-mode: both;
+  animation-play-state: running;
+  animation-name: imgs;
+}
+@keyframes imgs {
+  100% {
+    transform: translate(20%);
+}
+  50%{
+        transform: translate(-20%);
+
+  }
+}
+</style>
