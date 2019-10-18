@@ -10,7 +10,8 @@
           :class="{'md:flex-row-reverse': index % 2 === 0}"
         >
           <div
-            class="h-64 md:h-auto md:w-1/2 flex-none rounded-t md:rounded-t-none md:rounded-l text-center overflow-hidden bg-gray-500"
+            class="h-64 md:h-auto md:w-1/2 flex-none rounded-t text-center overflow-hidden bg-gray-500"
+          :class="{'md:rounded-none md:rounded-r ': index % 2 === 0, ' md:rounded-none md:rounded-l ': index % 2 !== 0}"
           >
             <div class="py-16 inline-flex justify-around" :class="{'imgs-row': index % 2 === 0}">
               <img
@@ -23,7 +24,9 @@
             </div>
           </div>
           <div
-            class="w-full md:w-1/2 border-r border-b border-l border-gray-300 md:border-l-0 md:border-t bg-white rounded-b md:rounded-b-none md:rounded-r p-4 flext flex-col justify-between leading-normal"
+            class="w-full md:w-1/2 border-r border-b border-l border-gray-300 md:border-l-0 md:border-t bg-white rounded-b md:rounded-b-none p-4 flext flex-col justify-between leading-normal"
+                    :class="{'md:rounded-l ': index % 2 === 0, 'md:rounded-r ': index % 2 !== 0}"
+
           >
             <div class="font-bold text-xl mb-2 p-2 text-gray-800">{{skill.title}}</div>
             <div class="text-gray-700 text-base p-2 text-gray-700">{{skill.description}}</div>
