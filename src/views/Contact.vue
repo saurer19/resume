@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-1 h-full pt-8 px-6 justify-center bg-gray-200 text-gray-800">
+  <div class="flex-1 h-full pt-8 px-6 justify-center text-gray-800">
     <div class="max-w-lg w-full lg:max-w-6xl mx-auto">
       <div class="text-5xl text-blue-700 font-normal py-8 px-10">Contact Me</div>
     </div>

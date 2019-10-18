@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-1 h-full py-8 px-6 justify-center bg-gray-200 text-gray-800">
+  <div class="flex-1 h-full py-8 px-6 justify-center text-gray-800">
     <div class="max-w-6xl mx-auto py-8">
       <div class="lg:mx-12 text-5xl text-blue-700 font-normal">Experience</div>
 
