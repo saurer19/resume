@@ -2,8 +2,7 @@
   <header class="sm:flex text-gray-300 sm:justify-between sm:items-center sm:px-4 sm:py-3">
     <div class="flex items-center justify-between px-4 py-3">
       <router-link to="/" class="text-2xl cursor-pointer" @click.native="isOpen=false">
-        Gabriel
-        <span class="text-blue-200 font-semibold">Rivas</span>
+        Gabriel<span class="text-blue-200 font-semibold">Rivas</span>
       </router-link>
       <div class="sm:hidden">
         <button

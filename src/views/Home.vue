@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto px-6 text-center text-white py-16 md:py-64 ">
+  <div class="mx-auto xs:px-6 text-center text-white py-16 md:py-64 ">
     <div class="flex flex-col md:flex-row">
 <div class="max-w-xs mx-auto md:w-1/2">
       <img
@@ -10,12 +10,11 @@
     </div>
     <div class=" md:w-1/2 max-w-2xl">
       <div class="tracking-wider text-3xl lg:text-4xl font-mono pt-10 md:pt-0">
-        Software
-        <span class="font-semibold text-blue-200">Developer</span>
+        Software<span class="font-semibold text-blue-200">Developer</span>
       </div>
       <div>
         <div
-          class="leading-normal text-left hyphens-text pt-2"
+          class="leading-normal text-center hyphens-text pt-2 px-3 md:text-left md:px-0"
         >I am passionate about technology and truly enjoy the work in this field. My eagerness to learn and desire to gain experience have led me to engage in a wide variety of roles including hybrid mobile applications, SPA websites, and back-end development.</div>
       </div>
       <router-link
