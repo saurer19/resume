@@ -4,7 +4,7 @@
       <div class="lg:mx-12 text-5xl text-blue-700 font-normal">Experience</div>
 
       <div
-        class="lg:mx-12 mt-6 sm:mt-12 bg-gray-700 rounded overflow-hidden shadow-lg md:flex"
+        class="lg:mx-12 mt-6 sm:mt-12 bg-job rounded overflow-hidden shadow-lg md:flex"
         v-for="job in jobs"
         v-bind:key="job.title"
       >
@@ -21,7 +21,7 @@
           <div>
             <div class="antialiased text-2xl md:text-2xl font-medium text-gray-100">{{job.title}}</div>
             <div
-              class="text-gray-100 mt-2 md:mt-3 antialiased font-medium text-sm md:text-md leading-tight md:leading-normal opacity-75"
+              class="text-gray-100 mt-2 md:mt-3 antialiased font-medium text-sm md:text-md leading-tight md:leading-normal opacity-90"
             >{{job.description}}</div>
             <div class="px-6 py-4">
               <a
@@ -103,7 +103,6 @@ export default {
             { name: "Angular +", link: "https://angular.io/" },
             { name: "Vue.js", link: "https://vuejs.org" },
             { name: "AWS", link: "https://aws.amazon.com" }
-
           ]
         }
       ]
@@ -111,3 +110,9 @@ export default {
   }
 };
 </script>
+<style scoped>
+.bg-job {
+ background-color: #5b6467;
+background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%);
+}
+</style>

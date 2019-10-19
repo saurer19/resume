@@ -1,10 +1,12 @@
 <template>
   <div class="lg:w-1/2">
-    <Notification
-      v-on:close="closeNotification"
-      v-show="isNotificationOpen"
-      :isError="isFetchError"
-    ></Notification>
+    <transition name="fade">
+      <Notification
+        v-on:close="closeNotification"
+        v-if="isNotificationOpen"
+        :isError="isFetchError"
+      ></Notification>
+    </transition>
     <form>
       <div class="flex flex-wrap -mx-3 mb-4">
         <div class="w-full md:w-1/2 px-3">
@@ -77,13 +79,14 @@ export default {
       name: "",
       message: "",
       isEmailValid: true,
-      isNotificationOpen: true,
-      isFetchError: true
+      isNotificationOpen: false,
+      isFetchError: false,
+      isSumited: false
     };
   },
   computed: {
     buttonDisable: function() {
-      return !(this.emailValid && this.name && this.message);
+      return !(this.emailValid && this.name && this.message && !this.isSumited);
     },
     emailValid: function() {
       const emailRegex = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/;
@@ -96,8 +99,9 @@ export default {
     },
     sendMessage: function() {
       const { name, email, message } = this;
+      this.isSumited = true;
       const url =
-        "https://535xyteb27.execute-api.us-east-1.amazonaws.com/Deployed/";
+        "https://2j9xwebgc3.execute-api.us-east-1.amazonaws.com/Deployed";
       fetch(url, {
         method: "POST",
         body: JSON.stringify({
@@ -115,14 +119,26 @@ export default {
           this.message = "";
           console.log(result);
           this.isFetchError = false;
-          this.isNotificationOpen = true;
         })
-        .catch(function(error) {
+        .catch(error => {
           console.log("Request failure: ", error);
           this.isFetchError = true;
+        })
+        .finally(() => {
           this.isNotificationOpen = true;
+          this.isSumited = false;
         });
     }
   }
 };
 </script>
+<style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

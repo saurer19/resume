@@ -28,20 +28,18 @@
     <nav :class="{'close max-h-0 ': !isOpen}" class="sm:block sm:max-h-full navLinks">
       <div class="px-4 pt-2 pb-4 sm:flex sm:p-0">
         <router-link
-          to="/skills"
+          v-for="route in routes"
+          :key="route.path"
+          :to="route.path"
+          v-slot="{ navigate, isActive }"
           @click.native="isOpen=false"
-          class="cursor-pointer mt-1 block px-2 py-1 font-semibold rounded hover:bg-gray-800 sm:mt-0 sm:ml-2"
-        >Skills</router-link>
-        <router-link
-          to="/experience"
-          @click.native="isOpen=false"
-          class="cursor-pointer mt-1 block px-2 py-1 font-semibold rounded hover:bg-gray-800 sm:mt-0 sm:ml-2"
-        >Experience</router-link>
-        <router-link
-          to="/contact"
-          @click.native="isOpen=false"
-          class="cursor-pointer mt-1 block px-2 py-1 font-semibold rounded hover:bg-gray-800 sm:mt-0 sm:ml-2"
-        >Contact</router-link>
+          class="cursor-pointer mt-1 block px-2 py-1 tracking-wide rounded hover:bg-gray-800 sm:mt-0 sm:ml-2"
+        >
+          <div
+            :class="isActive ?'text-blue-200 font-black':'text-gray-400 font-normal'"
+            @click="navigate"
+          >{{route.name}}</div>
+        </router-link>
       </div>
     </nav>
   </header>
@@ -50,8 +48,27 @@
 export default {
   data() {
     return {
-      isOpen: false
+      isOpen: false,
+      routes: [
+        {
+          path: "/skills",
+          name: "Skills"
+        },
+        {
+          path: "/experience",
+          name: "Experience"
+        },
+        {
+          path: "/contact",
+          name: "Contact"
+        }
+      ]
     };
+  },
+  computed: {
+    currentRouteName() {
+      return this.$route.name;
+    }
   }
 };
 </script>

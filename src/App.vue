@@ -1,13 +1,13 @@
 <template>
-  <div id="app" class="antialiased text-gray-900">
+  <div id="app" class="antialiased text-gray-900 ">
     <div class="min-h-screen svgBackground min-w-full flex flex-col">
       <div class="relative" :class="{'shadow-md border-b border-gray-900':$route.name!=='home'}">
         <Navbar />
       </div>
-      <transition name="fade" mode="out-in">
         <div class="min-h-full flex flex-col flex-grow" :class="{'bg-gray-200':$route.name!=='home'}">
           <router-view />
-          <div class="flex pt-8 pb-6 mt-auto">
+          <div class="flex flex flex-grow"></div>
+          <div class="flex h-24">
             <a
             href="https://github.com/saurer19/resume"
             target="_blank" 
@@ -28,7 +28,6 @@
             </a>
           </div>
         </div>
-      </transition>
     </div>
   </div>
 </template>
@@ -44,18 +43,7 @@ export default {
 <style src="./assets/tailwind.css"></style>
 <style>
 .svgBackground {
-  background-color: #19202b;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%233f506b' fill-opacity='0.11'%3E%3Cpath fill-rule='evenodd' d='M11 0l5 20H6l5-20zm42 31a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM0 72h40v4H0v-4zm0-8h31v4H0v-4zm20-16h20v4H20v-4zM0 56h40v4H0v-4zm63-25a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM53 41a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-30 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-28-8a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zM56 5a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zm-3 46a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM21 0l5 20H16l5-20zm43 64v-4h-4v4h-4v4h4v4h4v-4h4v-4h-4zM36 13h4v4h-4v-4zm4 4h4v4h-4v-4zm-4 4h4v4h-4v-4zm8-8h4v4h-4v-4z'/%3E%3C/g%3E%3C/svg%3E");
-}
-.fade-enter-active,
-.fade-leave-active {
-  transition-duration: 0.3s;
-  transition-property: opacity;
-  transition-timing-function: ease;
-}
-
-.fade-enter,
-.fade-leave-active {
-  opacity: 0;
+background-color: #000000;
+background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
 }
 </style>
