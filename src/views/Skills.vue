@@ -94,7 +94,7 @@ export default {
         },
         {
           title: "AWS",
-          description: `I’m able to create a REST API using API Getaway and Lambda functions. 
+          description: `I’m able to create a REST API using API Gateway and Lambda functions. 
 I have experience creating CI/CD using Pipeline to automate the deployment of webapps.
 Full understanding of IAM to grant the necessary permission.
 `,
