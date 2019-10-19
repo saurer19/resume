@@ -1,13 +1,13 @@
 <template>
   <header class="sm:flex text-gray-300 sm:justify-between sm:items-center sm:px-4 sm:py-3">
     <div class="flex items-center justify-between px-4 py-3">
-      <router-link to="/" class="text-2xl cursor-pointer" @click.native="isOpen=false">
+      <router-link to="/" class="text-2xl cursor-pointer pl-2 md:pl-4" @click.native="isOpen=false">
         Gabriel<span class="text-blue-200 font-semibold">Rivas</span>
       </router-link>
       <div class="sm:hidden">
         <button
           @click="isOpen = !isOpen"
-          type="button"
+          aria-label="Navigate"
           class="block text-gray-500 hover: focus: focus:outline-none"
         >
           <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">

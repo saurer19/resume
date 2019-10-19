@@ -12,9 +12,10 @@
         <div class="w-full md:w-1/2 px-3">
           <label
             class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-            for="grid-password"
+            for="email-input"
           >Email *</label>
           <input
+            id="email-input"
             class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
             :class="{'border-red-500':!isEmailValid}"
             v-model="email"
@@ -27,9 +28,10 @@
         <div class="w-full md:w-1/2 px-3">
           <label
             class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-            for="grid-password"
+            for="name-input"
           >Name *</label>
           <input
+            id="name-input"
             class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
             type="text"
             placeholder="Your Name..."
@@ -39,9 +41,10 @@
         <div class="w-full px-3">
           <label
             class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-            for="grid-password"
+            for="message-input"
           >Message *</label>
           <textarea
+            id="message-input"
             v-model="message"
             placeholder="Your Message..."
             rows="6"

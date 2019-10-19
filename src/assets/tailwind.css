@@ -4,6 +4,16 @@
 .hyphens-text {
   hyphens: auto;
 }
+.animation-enter-active,
+.animation-leave-active {
+  transition-property: opacity;
+  transition-duration: 1s;
+}
+
+.animation-enter,
+.animation-leave-to {
+  opacity: 0;
+}
 @responsive {
   .padding-image-lg {
     padding-top: 60%;

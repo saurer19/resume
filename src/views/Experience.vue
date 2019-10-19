@@ -2,39 +2,40 @@
   <div class="flex-1 h-full py-8 px-6 justify-center text-gray-800">
     <div class="max-w-6xl mx-auto py-8">
       <div class="lg:mx-12 text-5xl text-blue-700 font-normal">Experience</div>
-
-      <div
-        class="lg:mx-12 mt-6 sm:mt-12 bg-job rounded overflow-hidden shadow-lg md:flex"
-        v-for="job in jobs"
-        v-bind:key="job.title"
-      >
-        <div class="md:w-1/2 md:pt-16 md:pr-0 md:pl-12">
-          <a class="block relative padding-image-sm md:padding-image-lg" :href="job.link">
-            <img
-              class="inset-0 absolute block rounded-t md:rounded-b md:shadow-lg hover:opacity-75"
-              :src="job.img.src"
-              :alt="job.img.alt"
-            />
-          </a>
-        </div>
-        <div class="px-6 pb-6 pt-3 md:w-1/2 md:px-12 md:py-8 md:flex md:items-center">
-          <div>
-            <div class="antialiased text-2xl md:text-2xl font-medium text-gray-100">{{job.title}}</div>
-            <div
-              class="text-gray-100 mt-2 md:mt-3 antialiased font-medium text-sm md:text-md leading-tight md:leading-normal opacity-90"
-            >{{job.description}}</div>
-            <div class="px-6 py-4">
-              <a
-                :href="tool.link"
-                target="_blank"
-                v-for="tool in job.tools"
-                v-bind:key="tool.name"
-                class="inline-block shadow-md bg-gray-300 hover:bg-gray-500 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2"
-              >{{tool.name}}</a>
+      <transition-group appear tag="div" class="skill" name="animation">
+        <div
+          class="lg:mx-12 mt-6 sm:mt-12 bg-job rounded overflow-hidden shadow-lg md:flex"
+          v-for="job in jobs"
+          v-bind:key="job.title"
+        >
+          <div class="md:w-1/2 md:pt-16 md:pr-0 md:pl-12">
+            <a class="block relative padding-image-sm md:padding-image-lg" :href="job.link">
+              <img
+                class="inset-0 absolute block rounded-t md:rounded-b md:shadow-lg hover:opacity-75"
+                :src="job.img.src"
+                :alt="job.img.alt"
+              />
+            </a>
+          </div>
+          <div class="px-6 pb-6 pt-3 md:w-1/2 md:px-12 md:py-8 md:flex md:items-center">
+            <div>
+              <div class="antialiased text-2xl md:text-2xl font-medium text-gray-100">{{job.title}}</div>
+              <div
+                class="text-gray-100 mt-2 md:mt-3 antialiased font-medium text-sm md:text-md leading-tight md:leading-normal opacity-90"
+              >{{job.description}}</div>
+              <div class="px-6 py-4">
+                <a
+                  :href="tool.link"
+                  target="_blank"
+                  v-for="tool in job.tools"
+                  v-bind:key="tool.name"
+                  class="inline-block shadow-md bg-gray-300 hover:bg-gray-500 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2"
+                >{{tool.name}}</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </transition-group>
     </div>
   </div>
 </template>
@@ -112,7 +113,8 @@ export default {
 </script>
 <style scoped>
 .bg-job {
- background-color: #5b6467;
-background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%);
+  background-color: #5b6467;
+  background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%);
 }
+
 </style>
