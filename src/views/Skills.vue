@@ -34,6 +34,17 @@
           </div>
         </transition-group>
       </div>
+      <div class="flex  sm:invisible pt-4">
+        <router-link
+          to="/experience"
+          class=" mx-auto text-center font-bold py-2 px-4 rounded flex items-center bg-blue-500 hover:bg-blue-700 text-gray-100 px-4 border-b-4 border-blue-800 shadow-md"
+        >
+          <span class="pr-3 tracking-wider font-mono">Experience</span>
+          <svg class="fill-current" style="width:24px;height:24px" viewBox="0 0 24 24">
+            <path  d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" />
+          </svg>
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -88,7 +99,7 @@ export default {
             },
             {
               alt: "SQLALchemy",
-              src: "/img/python.svg"werewr
+              src: "/img/python.svg"
             }
           ]
         },

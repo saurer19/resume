@@ -60,7 +60,7 @@
         :disabled="buttonDisable"
         :class="{'bg-blue-500 hover:bg-blue-700 text-gray-100 px-4 border-b-4 border-blue-800': !buttonDisable, 'bg-gray-300 text-gray-800 ':buttonDisable }"
       >
-        <span class="pr-3">Sent</span>
+        <span class="pr-3 tracking-wider font-mono">Send</span>
         <svg class="fill-current" style="width:24px;height:24px" viewBox="0 0 24 24">
           <path
             d="M13 17H17V14L22 18.5L17 23V20H13V17M20 4H4A2 2 0 0 0 2 6V18A2 2 0 0 0 4 20H11.35A5.8 5.8 0 0 1 11 18A6 6 0 0 1 22 14.69V6A2 2 0 0 0 20 4M20 8L12 13L4 8V6L12 11L20 6Z"
@@ -117,14 +117,16 @@ export default {
           return response.json();
         })
         .then(result => {
-          this.name = "";
-          this.email = "";
-          this.message = "";
-          console.log(result);
-          this.isFetchError = false;
+          if (result === "ok") {
+            this.name = "";
+            this.email = "";
+            this.message = "";
+            this.isFetchError = false;
+          } else {
+            this.isFetchError = true;
+          }
         })
-        .catch(error => {
-          console.log("Request failure: ", error);
+        .catch(() => {
           this.isFetchError = true;
         })
         .finally(() => {

@@ -5,7 +5,9 @@
         <Navbar />
       </div>
       <div class="min-h-full flex flex-col flex-grow" :class="{'bg-gray-200':$route.name!=='home'}">
-        <router-view />
+        <transition name="page" mode="out-in">
+          <router-view />
+        </transition>
         <div class="flex flex flex-grow"></div>
         <div class="flex h-24">
           <a
@@ -55,4 +57,12 @@ export default {
   background-color: #000000;
   background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
 }
+.page-enter-active, .page-leave-active {
+  transition: opacity .5s, transform .5s;
+}
+.page-enter, .page-leave-to {
+  opacity: 0;
+  transform: translateX(-30%);
+}
+
 </style>
