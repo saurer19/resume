@@ -88,7 +88,7 @@ export default {
             },
             {
               alt: "SQLALchemy",
-              src: "/img/python.svg"
+              src: "/img/python.svg"werewr
             }
           ]
         },
