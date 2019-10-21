@@ -20,9 +20,14 @@
             :class="{'border-red-500':!isEmailValid}"
             v-model="email"
             type="email"
+            maxlength="64"
             placeholder="Your Email..."
             @blur="isEmailValid=emailValid"
           />
+          <p
+            v-show="email.length>=64"
+            class="text-red-500 text-xs italic"
+          >The Email cannot be longer than 64 charaters</p>
           <p v-show="!isEmailValid" class="text-red-500 text-xs italic">Please insert a valid email.</p>
         </div>
         <div class="w-full md:w-1/2 px-3">
@@ -32,11 +37,16 @@
           >Name *</label>
           <input
             id="name-input"
+            maxlength="30"
             class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
             type="text"
             placeholder="Your Name..."
             v-model="name"
           />
+          <p
+            v-show="name.length>=30"
+            class="text-red-500 text-xs italic"
+          >The Email cannot be longer than 30 charaters</p>
         </div>
         <div class="w-full px-3">
           <label
@@ -48,8 +58,13 @@
             v-model="message"
             placeholder="Your Message..."
             rows="6"
+            maxlength="512"
             class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
           ></textarea>
+          <p
+            v-show="message.length>=512"
+            class="text-red-500 text-xs italic"
+          >The Message cannot be longer than 64 charaters</p>
         </div>
       </div>
     </form>
@@ -89,7 +104,15 @@ export default {
   },
   computed: {
     buttonDisable: function() {
-      return !(this.emailValid && this.name && this.message && !this.isSumited);
+      return !(
+        this.emailValid &&
+        this.name &&
+        this.message &&
+        !this.isSumited &&
+        this.message.length <= 512 &&
+        this.email.length <= 64 &&
+        this.name.length <= 30
+      );
     },
     emailValid: function() {
       const emailRegex = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/;
@@ -101,38 +124,40 @@ export default {
       this.isNotificationOpen = false;
     },
     sendMessage: function() {
-      const { name, email, message } = this;
-      this.isSumited = true;
-      const url =
-        "https://2j9xwebgc3.execute-api.us-east-1.amazonaws.com/Deployed";
-      fetch(url, {
-        method: "POST",
-        body: JSON.stringify({
-          name,
-          email,
-          message
+      if (!this.buttonDisable) {
+        const { name, email, message } = this;
+        this.isSumited = true;
+        const url =
+          "https://2j9xwebgc3.execute-api.us-east-1.amazonaws.com/Deployed";
+        fetch(url, {
+          method: "POST",
+          body: JSON.stringify({
+            name,
+            email,
+            message
+          })
         })
-      })
-        .then(response => {
-          return response.json();
-        })
-        .then(result => {
-          if (result === "ok") {
-            this.name = "";
-            this.email = "";
-            this.message = "";
-            this.isFetchError = false;
-          } else {
+          .then(response => {
+            return response.json();
+          })
+          .then(result => {
+            if (result === "ok") {
+              this.name = "";
+              this.email = "";
+              this.message = "";
+              this.isFetchError = false;
+            } else {
+              this.isFetchError = true;
+            }
+          })
+          .catch(() => {
             this.isFetchError = true;
-          }
-        })
-        .catch(() => {
-          this.isFetchError = true;
-        })
-        .finally(() => {
-          this.isNotificationOpen = true;
-          this.isSumited = false;
-        });
+          })
+          .finally(() => {
+            this.isNotificationOpen = true;
+            this.isSumited = false;
+          });
+      }
     }
   }
 };
