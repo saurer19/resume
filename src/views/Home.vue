@@ -1,7 +1,7 @@
 <template>
   <div class="mx-auto xs:px-6 text-center text-white pt-16 md:pt-32">
-    <div class="flex flex-col md:flex-row">
-      <div class="max-w-xs mx-auto md:w-1/2">
+    <div class="flex flex-col md:flex-row justify-center">
+      <div class=" mx-auto md:w-1/2">
         <img
           class="rounded-lg shadow-xl h-48 sm:h-64 block mx-auto"
           src="/img/gabe-square.png"
@@ -29,7 +29,7 @@
           </svg>
         </router-link>
       </div>
-      <div class="flex  sm:invisible">
+      <div class="flex  sm:hidden">
         <router-link
           to="/skills"
           class=" mx-auto text-center font-bold py-2 px-4 rounded flex items-center bg-blue-500 hover:bg-blue-700 text-gray-100 px-4 border-b-4 border-blue-800 shadow-md"
