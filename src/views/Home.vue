@@ -1,20 +1,20 @@
 <template>
-  <div class="mx-auto xs:px-6 text-center text-white pt-16 md:pt-32">
+  <div class="mx-auto sm:mx-4 text-center text-white pt-16 md:pt-32">
     <div class="flex flex-col md:flex-row justify-center">
-      <div class=" mx-auto md:w-1/2">
+      <div class="max-w-xs mx-auto md:mx-0 md:w-1/2">
         <img
           class="rounded-lg shadow-xl h-48 sm:h-64 block mx-auto"
           src="/img/gabe-square.png"
           alt="me"
         />
       </div>
-      <div class="md:w-1/2 max-w-2xl">
-        <div class="tracking-wider text-3xl lg:text-4xl font-mono pt-10 md:pt-0">
+      <div class="md:w-1/2 mx-auto md:mx-0 max-w-lg md:pl-4">
+        <div class="tracking-wider text-3xl lg:text-4xl font-mono pt-10 md:pt-0 md:text-left">
           Software<span class="font-semibold text-blue-200">Developer</span>
         </div>
         <div>
           <div
-            class="leading-normal text-center hyphens-text pt-2 px-3 md:text-left md:px-0"
+            class="leading-normal text-center hyphens-text pt-2 px-3 md:text-left md:px-0 "
           >I am passionate about technology and truly enjoy the work in this field. My eagerness to learn and desire to gain experience have led me to engage in a wide variety of roles including hybrid mobile applications, SPA web apps, and back-end development.</div>
         </div>
         <router-link
