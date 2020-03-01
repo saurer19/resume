@@ -9,7 +9,10 @@
           v-bind:key="job.title"
         >
           <div class="md:w-1/2 md:pt-16 md:pr-0 md:pl-12">
-            <a class="block relative padding-image-sm md:padding-image-lg" :href="job.link">
+            <a
+              class="block relative padding-image-sm md:padding-image-lg"
+              :href="job.link"
+            >
               <img
                 class="inset-0 absolute block rounded-t md:rounded-b md:shadow-lg hover:opacity-75"
                 :src="job.img.src"
@@ -17,12 +20,24 @@
               />
             </a>
           </div>
-          <div class="px-6 pb-6 pt-3 md:w-1/2 md:px-12 md:py-8 md:flex md:items-center">
+          <div
+            class="px-6 pb-6 pt-3 md:w-1/2 md:px-12 md:py-8 md:flex md:items-center"
+          >
             <div>
-              <div class="antialiased text-2xl md:text-2xl font-medium text-gray-100">{{job.title}}</div>
+              <div class="antialiased text-2xl md:text-2xl font-medium ">
+                <a
+                  :href="job.link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-gray-100 hover:text-gray-300"
+                  >{{ job.title }}</a
+                >
+              </div>
               <div
                 class="text-gray-100 mt-2 md:mt-3 antialiased font-medium text-sm md:text-md leading-tight md:leading-normal opacity-90"
-              >{{job.description}}</div>
+              >
+                {{ job.description }}
+              </div>
               <div class="px-6 py-4">
                 <a
                   :href="tool.link"
@@ -30,7 +45,8 @@
                   v-for="tool in job.tools"
                   v-bind:key="tool.name"
                   class="inline-block shadow-md bg-gray-300 hover:bg-gray-500 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2"
-                >{{tool.name}}</a>
+                  >{{ tool.name }}</a
+                >
               </div>
             </div>
           </div>
@@ -38,16 +54,22 @@
       </transition-group>
     </div>
     <div class="flex  sm:invisible pt-4">
-        <router-link
-          to="/contact"
-          class=" mx-auto text-center font-bold py-2 px-4 rounded flex items-center bg-blue-500 hover:bg-blue-700 text-gray-100 px-4 border-b-4 border-blue-800 shadow-md"
+      <router-link
+        to="/contact"
+        class=" mx-auto text-center font-bold py-2 px-4 rounded flex items-center bg-blue-500 hover:bg-blue-700 text-gray-100 px-4 border-b-4 border-blue-800 shadow-md"
+      >
+        <span class="pr-3 tracking-wider font-mono">Contact Me</span>
+        <svg
+          class="fill-current"
+          style="width:24px;height:24px"
+          viewBox="0 0 24 24"
         >
-          <span class="pr-3 tracking-wider font-mono">Contact Me</span>
-          <svg class="fill-current" style="width:24px;height:24px" viewBox="0 0 24 24">
-            <path  d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" />
-          </svg>
-        </router-link>
-      </div>
+          <path
+            d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"
+          />
+        </svg>
+      </router-link>
+    </div>
   </div>
 </template>
 <script>
@@ -104,11 +126,11 @@ export default {
         },
         {
           title: "Firefly Integrations",
-          link: "http://www.fireflyint.com",
+          link: "https://www.vegatouch.com",
           description:
-            "My responsibilities include the initial research and development of features and projects, and develop web application tools for internal use and web applications for the company clients.",
+            "My responsibilities included the initial research and development of features and projects, and develop web application tools for internal use and web applications for the company clients.",
           img: {
-            src: "/img/fireflyint.jpg",
+            src: "/img/vegatouch.png",
             alt: "Firefly"
           },
           tools: [
@@ -116,6 +138,17 @@ export default {
             { name: "Vue.js", link: "https://vuejs.org" },
             { name: "AWS", link: "https://aws.amazon.com" }
           ]
+        },
+        {
+          title: "MHVillage",
+          link: "https://www.mhvillage.com",
+          description:
+            "My responsabilities as FrontEnd developer are planing and develop features for a server-side web application with thousands of visitors per day.",
+          img: {
+            src: "/img/mhvillage.png",
+            alt: "Firefly"
+          },
+          tools: [{ name: "Angular +", link: "https://angular.io/" }]
         }
       ]
     };
@@ -127,5 +160,4 @@ export default {
   background-color: #5b6467;
   background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%);
 }
-
 </style>
