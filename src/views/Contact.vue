@@ -42,7 +42,7 @@
         <div class="inline-flex leading-normal text-left hyphens-text py-4 pl-4">
           <a
             class="inline-flex hover:text-blue-700"
-            href="https://www.linkedin.com/in/gabriel-alexander-rivas-rojas-571227b4/"
+            href="https://www.linkedin.com/in/gabrie-rivas-571227b4/"
             target="_blank"
             rel="noopener noreferrer"
           >
