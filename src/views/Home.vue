@@ -1,15 +1,15 @@
 <template>
   <div class="mx-auto sm:mx-4 text-center text-white pt-16 md:pt-32">
     <div class="flex flex-col md:flex-row justify-center">
-      <div class="max-w-xs mx-auto md:mx-0 md:w-1/2">
+      <div class=" max-w-xs mx-auto md:mx-0 md:w-1/2 px-2 sm:px-0">
         <img
-          class="rounded-lg shadow-xl h-48 sm:h-64 block mx-auto"
-          src="/img/gabe-square.png"
+          class=" shadow-xl rounded-lg block  mx-auto object-contain"
+          src="/img/gabe.jpeg"
           alt="me"
         />
       </div>
-      <div class="md:w-1/2 mx-auto md:mx-0 max-w-lg md:pl-4">
-        <div class="tracking-wider text-3xl lg:text-4xl font-mono pt-10 md:pt-0 md:text-left">
+      <div class="mx-2 md:w-1/2 mx-auto md:mx-0 max-w-lg md:pl-4">
+        <div class="tracking-wider text-2xl sm:text-3xl lg:text-4xl font-mono pt-10 md:pt-0 md:text-left">
           Software<span class="font-semibold text-blue-200">Developer</span>
         </div>
         <div>
